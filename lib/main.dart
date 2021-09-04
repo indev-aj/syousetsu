@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:syousetsu/screen/home_screen.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  // await FlutterDisplayMode.setHighRefreshRate();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    FlutterDisplayMode.setHighRefreshRate();
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent, // transparent status bar
